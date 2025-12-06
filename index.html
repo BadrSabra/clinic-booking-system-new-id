@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="عيادة طبية متخصصة - حجز مواعيد أونلاين مع أفضل الأطباء">
+    <meta name="keywords" content="عيادة, أطباء, حجز مواعيد, صحة, طب, موعد طبي">
+    <title>عيادتي - المركز الطبي المتخصص</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>">
+</head>
+<body>
+    <!-- تخطي إلى المحتوى الرئيسي (لإمكانية الوصول) -->
+    <a href="#main-content" class="skip-link" aria-label="تخطي إلى المحتوى الرئيسي">تخطي إلى المحتوى الرئيسي</a>
+    
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+                <!-- Logo -->
+                <div class="logo">
+                    <i class="fas fa-hospital-alt" aria-hidden="true"></i>
+                    <h1 class="logo-text">عيادتي</h1>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <!-- Main Navigation -->
+                <ul class="nav-menu" id="main-menu" role="menubar">
+                    <li role="none"><a href="#home" class="nav-link" role="menuitem" aria-current="page">الرئيسية</a></li>
+                    <li role="none"><a href="#doctors" class="nav-link" role="menuitem">الأطباء</a></li>
+                    <li role="none"><a href="#services" class="nav-link" role="menuitem">الخدمات</a></li>
+                    <li role="none"><a href="#booking" class="nav-link" role="menuitem">الحجز</a></li>
+                    <li role="none"><a href="#contact" class="nav-link" role="menuitem">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">رعاية طبية <span class="highlight">متميزة</span> في مكان واحد</h1>
+                    <p class="hero-description">
+                        نوفر لك أفضل الخدمات الطبية مع كادر من الأطباء المتخصصين في مختلف المجالات
+                    </p>
+                    <a href="#booking" class="cta-button" aria-label="احجز موعد الآن">
+                        احجز موعد الآن
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section id="doctors" class="doctors-section" aria-labelledby="doctors-title">
+            <div class="container">
+                <h2 id="doctors-title" class="section-title">أطباؤنا المتخصصون</h2>
+                <div class="doctors-grid">
+                    <!-- Doctor cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="booking-section" aria-labelledby="booking-title">
+            <div class="container">
+                <h2 id="booking-title" class="section-title">احجز موعدك بسهولة</h2>
+                <form class="booking-form" id="booking-form" aria-labelledby="booking-title">
+                    <div class="form-group">
+                        <label for="full-name" class="form-label">
+                            الاسم الكامل <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="full-name" 
+                            name="full-name" 
+                            class="form-input" 
+                            placeholder="أدخل اسمك الكامل"
+                            required
+                            aria-required="true"
+                            minlength="2"
+                            maxlength="50"
+                        >
+                        <div class="error-message" id="name-error" aria-live="polite"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone-number" class="form-label">
+                            رقم الهاتف <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone-number" 
+                            name="phone-number" 
+                            class="form-input" 
+                            placeholder="05XXXXXXXX"
+                            required
+                            aria-required="true"
+                            pattern="^(05|5)(5|0|3|6|4|9|1|8|7)[0-9]{7}$"
+                        >
+                        <div class="error-message" id="phone-error" aria-live="polite"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointment-date" class="form-label">
+                            تاريخ الموعد <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="date" 
+                            id="appointment-date" 
+                            name="appointment-date" 
+                            class="form-input" 
+                            required
+                            aria-required="true"
+                        >
+                        <div class="error-message" id="date-error" aria-live="polite"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointment-time" class="form-label">
+                            وقت الموعد <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="time" 
+                            id="appointment-time" 
+                            name="appointment-time" 
+                            class="form-input" 
+                            required
+                            aria-required="true"
+                            min="08:00"
+                            max="20:00"
+                        >
+                        <div class="error-message" id="time-error" aria-live="polite"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes" class="form-label">ملاحظات إضافية (اختياري)</label>
+                        <textarea 
+                            id="notes" 
+                            name="notes" 
+                            class="form-textarea" 
+                            placeholder="أي معلومات إضافية تريد إضافتها..."
+                            rows="3"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        تأكيد الحجز
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">تواصل معنا</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="contact-subtitle">هاتف العيادة</h3>
+                                <a href="tel:+966501234567" class="contact-link">٠٥٠١٢٣٤٥٦٧+</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="contact-subtitle">البريد الإلكتروني</h3>
+                                <a href="mailto:info@myclinic.com" class="contact-link">info@myclinic.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="contact-subtitle">موقع العيادة</h3>
+                                <address class="contact-address">
+                                    الرياض، حي العليا، شارع الملك فهد
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h3 class="social-title">تابعنا على</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="تويتر">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="إنستغرام">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="واتساب">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="سناب شات">
+                                <i class="fab fa-snapchat"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-hospital-alt" aria-hidden="true"></i>
+                    <span class="footer-logo-text">عيادتي</span>
+                </div>
+                
+                <p class="footer-description">
+                    نقدم خدمات طبية متكاملة بمعايير عالمية مع فريق من الأطباء المتخصصين
+                </p>
+                
+                <div class="footer-bottom">
+                    <p class="copyright">
+                        &copy; <span id="current-year">2025</span> عيادتي. جميع الحقوق محفوظة.
+                    </p>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">سياسة الخصوصية</a>
+                        <a href="#" class="footer-link">الشروط والأحكام</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
